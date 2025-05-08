@@ -141,10 +141,14 @@ FOREIGN KEY (ID_Direccion) REFERENCES Direccion(ID_Direccion);
 ALTER TABLE espacio
 ADD CONSTRAINT FK_Tip_Vehic
 FOREIGN KEY (ID_Tip_Vehi) REFERENCES Tip_Vehi(ID_Tip_Vehi);
-
 ALTER TABLE espacio
 ADD CONSTRAINT FK_Sector
 FOREIGN KEY (ID_Sector) REFERENCES Sector(ID_Sector);
 ALTER TABLE espacio
 ADD CONSTRAINT FK_Parqueadero
 FOREIGN KEY (ID_Parqueadero) REFERENCES Parqueadero(ID_Parqueadero);
+
+ALTER TABLE Ingresos ADD Observaciones VARCHAR(50);
+ALTER TABLE Ingresos CHANGE COLUMN Observaciones Comentarios VARCHAR(50);
+
+ALTER TABLE Tip_Vehi ADD Val_Mes Decimal (10,2) NOT NULL;
