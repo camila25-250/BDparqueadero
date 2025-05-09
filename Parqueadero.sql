@@ -31,8 +31,8 @@ Marca VARCHAR(50)
 CREATE TABLE Tip_Vehi(
 ID_Tip_Vehi INT PRIMARY KEY auto_increment,
 Tipo VARCHAR(30) NOT NULL,
-Val_Hora DECIMAL (10,2) NOT NULL,
-Val_Dia DECIMAL (10,2) NOT NULL
+Val_Hora DECIMAL (10,3) NOT NULL,
+Val_Dia DECIMAL (10,3) NOT NULL
 );
 
 CREATE TABLE Vehiculo(
@@ -53,7 +53,7 @@ CREATE TABLE Ingresos(
 ID_Ingresos INT PRIMARY KEY auto_increment,
 Fech_Hor_Ing timestamp NOT NULL DEFAULT current_timestamp,
 Fech_Hor_Sal TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-Val_Pagado DECIMAL (10,2) NOT NULL,
+Val_Pagado DECIMAL (10,3) NOT NULL,
 ID_Usuarios INT,
 ID_Vehiculo INT,
 ID_Tip_Pago INT
@@ -151,4 +151,4 @@ FOREIGN KEY (ID_Parqueadero) REFERENCES Parqueadero(ID_Parqueadero);
 ALTER TABLE Ingresos ADD Observaciones VARCHAR(50);
 ALTER TABLE Ingresos CHANGE COLUMN Observaciones Comentarios VARCHAR(50);
 
-ALTER TABLE Tip_Vehi ADD Val_Mes Decimal (10,2) NOT NULL;
+ALTER TABLE Tip_Vehi ADD Val_Mes Decimal (10,3) NOT NULL;
